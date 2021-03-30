@@ -1,0 +1,12 @@
+README.md
+setup.py
+DialogTag.egg-info/PKG-INFO
+DialogTag.egg-info/SOURCES.txt
+DialogTag.egg-info/dependency_links.txt
+DialogTag.egg-info/requires.txt
+DialogTag.egg-info/top_level.txt
+dialog_tag/DialogTag.py
+dialog_tag/__init__.py
+dialog_tag/config.py
+dialog_tag/get_weights.py
+dialog_tag/label_mapping.py

@@ -1,0 +1,6 @@
+devel_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_training/devel
+install: false
+install_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_training/install
+profile: default
+source_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_training/src
+workspace: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_training

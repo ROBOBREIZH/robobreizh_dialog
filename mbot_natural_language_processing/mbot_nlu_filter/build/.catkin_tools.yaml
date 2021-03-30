@@ -1,0 +1,6 @@
+devel_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_filter/devel
+install: false
+install_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_filter/install
+profile: default
+source_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_filter/src
+workspace: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_filter

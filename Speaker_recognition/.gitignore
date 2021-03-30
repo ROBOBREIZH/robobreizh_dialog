@@ -1,0 +1,3 @@
+*.gmm
+__pycache__
+*.pyc

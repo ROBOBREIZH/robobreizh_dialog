@@ -1,0 +1,6 @@
+devel_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_classifiers/devel
+install: false
+install_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_classifiers/install
+profile: default
+source_space: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_classifiers/src
+workspace: /home/maelic/catkin_ws/src/mbot_natural_language_processing/mbot_nlu_classifiers

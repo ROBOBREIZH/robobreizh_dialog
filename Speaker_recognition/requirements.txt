@@ -1,0 +1,2 @@
+noisereduce
+python_speech_features
