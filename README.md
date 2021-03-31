@@ -55,14 +55,19 @@ https://www.nltk.org/
 
 This module use Tensorflow with CUDA for training. If you want to do trianing you need CUDA 11 properly installed in your machine. See [CUDA Installation Doc](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
 
-### 2.1. Installation
+### 2.2. Installation
 
 Simply run the script 
 ```
 sudo ./install_mbot.sh
 ```
 
-### 2.2. Tools used
+If you want to do training you also need to install others dependencies:
+```
+source mbot_natural_language_processing/mbot_nlu_training/common/setup/nlu_training_setup.sh
+```
+
+### 2.3. Tools used
 
 ROS (Robot Operating System):
 https://www.ros.org/

@@ -16,7 +16,7 @@
     <arg name="nlu_output" default="~output_recognition" />
 
     <!-- optionally dont use syntaxnet, only if you're processing single phrase sentences -->
-    <arg name="use_syntaxnet" default="True" />
+    <arg name="use_syntaxnet" default="False" />
 
     <!-- mbot natural language understanding, inputs text, outputs intention and arguments -->
     <node ns="$(arg ns)" pkg="mbot_nlu" type="mbot_nlu_node" name="mbot_nlu" respawn="true" output="screen">

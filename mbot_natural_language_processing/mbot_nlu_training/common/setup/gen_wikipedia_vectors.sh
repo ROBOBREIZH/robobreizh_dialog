@@ -2,7 +2,7 @@
 
 # dir path of this file
 DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+echo $DIR
 wikipedia_folder="${DIR}"/../resources/wikipedia_vectors
 wikipedia_src_folder="${DIR}"/../src/mbot_nlu_training/gen_wikipedia_vectors
 

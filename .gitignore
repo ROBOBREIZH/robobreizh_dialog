@@ -1,46 +1,46 @@
 # custom ingnore 
-NLP_Server/CASA-Dialogue-Act-Classifier/wandb/
-NLP_Server/CASA-Dialogue-Act-Classifier/checkpoints/
+/wandb/
+/checkpoints/
 
 
 # Byte-compiled / optimized / DLL files
-NLP_Server/CASA-Dialogue-Act-Classifier/__pycache__/
-NLP_Server/CASA-Dialogue-Act-Classifier/*.py[cod]
-NLP_Server/CASA-Dialogue-Act-Classifier/*$py.class
+/__pycache__/
+/*.py[cod]
+/*$py.class
 
 # C extensions
-NLP_Server/CASA-Dialogue-Act-Classifier/*.so
+/*.so
 
 # Distribution / packaging
-NLP_Server/CASA-Dialogue-Act-Classifier/.Python
-NLP_Server/CASA-Dialogue-Act-Classifier/build/
-NLP_Server/CASA-Dialogue-Act-Classifier/develop-eggs/
-NLP_Server/CASA-Dialogue-Act-Classifier/dist/
-NLP_Server/CASA-Dialogue-Act-Classifier/downloads/
-NLP_Server/CASA-Dialogue-Act-Classifier/eggs/
-NLP_Server/CASA-Dialogue-Act-Classifier/.eggs/
-NLP_Server/CASA-Dialogue-Act-Classifier/lib/
-NLP_Server/CASA-Dialogue-Act-Classifier/lib64/
-NLP_Server/CASA-Dialogue-Act-Classifier/parts/
-NLP_Server/CASA-Dialogue-Act-Classifier/sdist/
-NLP_Server/CASA-Dialogue-Act-Classifier/var/
-NLP_Server/CASA-Dialogue-Act-Classifier/wheels/
-NLP_Server/CASA-Dialogue-Act-Classifier/pip-wheel-metadata/
-NLP_Server/CASA-Dialogue-Act-Classifier/share/python-wheels/
-NLP_Server/CASA-Dialogue-Act-Classifier/*.egg-info/
-NLP_Server/CASA-Dialogue-Act-Classifier/.installed.cfg
-NLP_Server/CASA-Dialogue-Act-Classifier/*.egg
+/.Python
+/build/
+/develop-eggs/
+/dist/
+/downloads/
+/eggs/
+/.eggs/
+/lib/
+/lib64/
+/parts/
+/sdist/
+/var/
+/wheels/
+/pip-wheel-metadata/
+/share/python-wheels/
+/*.egg-info/
+/.installed.cfg
+/*.egg
 MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-NLP_Server/CASA-Dialogue-Act-Classifier/*.manifest
-NLP_Server/CASA-Dialogue-Act-Classifier/*.spec
+/*.manifest
+/*.spec
 
 # Installer logs
-NLP_Server/CASA-Dialogue-Act-Classifier/pip-log.txt
-NLP_Server/CASA-Dialogue-Act-Classifier/pip-delete-this-directory.txt
+/pip-log.txt
+/pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
