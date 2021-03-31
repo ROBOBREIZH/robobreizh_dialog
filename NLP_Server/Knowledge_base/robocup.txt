@@ -1,9 +1,0 @@
-RoboCup is an annual international robotics competition proposed and founded in 1996 by a group of university professors (including Hiroaki Kitano, Manuela M. Veloso, and Minoru Asada). The aim of the competition is to promote robotics and AI research by offering a publicly appealing – but formidable – challenge.
-
-The name RoboCup is a contraction of the competition's full name, "Robot Soccer World Cup", but there are many other areas of competition such as "RoboCupRescue", "RoboCup@Home" and "RoboCupJunior". In 2019, the international competition was held in Sydney, Australia. Peter Stone is the current president of RoboCup, and has been since 2019.
-
-“Competition pushes advances in technologies. What we learn from robots playing soccer or navigating a maze can be applied to industry and help us solve difficult real-world problems,” according to Professor Maurice Pagnucco, Head of the School of Computer Science and Engineering at UNSW.
-
-The official goal of the project:
-
-"By the middle of the 21st century, a team of fully autonomous humanoid robot soccer players shall win a soccer game, complying with the official rules of FIFA, against the winner of the most recent World Cup."

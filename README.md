@@ -2,13 +2,13 @@
 
 ## Description
 
-## 1. A General Question Answering approach using Transformers
+## 1. A conversational agent
 
 ### 1.1. Requirements
 
-- Python >= 3.6
-- pip3 for Python >= 3.6
-- Ubuntu >= 16.04
+- Python >= 3.7
+- pip3 for Python >= 3.7
+- Ubuntu = 16.04
 
 ### 1.2. Installation
 
@@ -69,28 +69,25 @@ https://github.com/socrob/mbot_natural_language_processing
 Dataset:
 https://github.com/kyordhel/GPSRCmdGen
 
-## 3. A conversational agent
-
-
-## 4. Speaker recognition
+## 3. Speaker recognition
 
 **Tested on Ubuntu 20.04 and macOS 10.15 Catalina, Python 3.8.5**
 
 WIP, Python testing scripts are hardcoded and may change soon.
 
-### 4.1 Dependecies
+### 3.1 Dependecies
 ```
 cd Speaker_recognition
 python3 -m pip install -r requirements.txt
 ```
 
-### 4.2 Test dataset
+### 3.2 Test dataset
 You can use if you want this small dataset to test the program
 ```
 ./download_dataset.sh
 ```
 
-### 4.3 Usage
+### 3.3 Usage
 First, you need to generate speaker models from the dataset
 
 ```

@@ -1,1 +1,0 @@
-RoboBreizh is a project of the RAMBO team of Lab-STICC, located at the European Center of Virtual Reality (CERV) of the National Engineering School of Brest (ENIB). It was launched in 2019 by Cédric Buche, Full Professor at ENIB. The current goal of this project is to create a team to be part of the Robocup 2021 Bordeaux edition.

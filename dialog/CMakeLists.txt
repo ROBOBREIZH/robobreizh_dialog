@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(interact)
+project(dialog)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -67,9 +67,6 @@ add_message_files(
    Wav.msg
    File.msg
    T2S.msg
-   LEDs.msg
-   MoveToVector.msg
-   MoveTowardVector.msg
 )
 
 add_service_files(
@@ -179,7 +176,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-   scripts/robobreizh_node.py
+   scripts/speech_to_text.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
