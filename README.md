@@ -51,6 +51,10 @@ https://www.nltk.org/
 
 ## 2. An action detection module using Mbot 
 
+### 2.1. Prerequisites
+
+This module use Tensorflow with CUDA for training. If you want to do trianing you need CUDA 11 properly installed in your machine. See [CUDA Installation Doc](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html).
+
 ### 2.1. Installation
 
 Simply run the script 
