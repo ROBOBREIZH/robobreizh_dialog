@@ -15,14 +15,10 @@ from sensor_msgs.msg import PointCloud
 from geometry_msgs.msg import Point32
 from geometry_msgs.msg import Point
 
-from server_request_nlp import ServerRequestNLP
-from server_request_vision import ServerRequestVis
-
 import cv2, random, time, base64
 from cv_bridge import CvBridge, CvBridgeError
 
 import imutils
-from server_request_intents import ServerRequestIntents
 import socket
 import json
 import speech_recognition as sr
