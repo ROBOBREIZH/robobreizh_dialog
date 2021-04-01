@@ -1,6 +1,11 @@
 # custom ingnore 
 /wandb/
 /checkpoints/
+atomic/
+conceptnet/
+pretrained_models/
+pretrained_models.tar.gz
+model/
 
 
 # Byte-compiled / optimized / DLL files
