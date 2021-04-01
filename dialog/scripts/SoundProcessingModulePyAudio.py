@@ -74,7 +74,7 @@ class SoundProcessingModule(object):
 
 			#Scenario 2
 			intents = self.socket_request(new_sentence)
-			self.technical_overview(intents, result)
+			#self.technical_overview(intents, result)
 			 
 
 			self.dialog_topic = result["main_topic"]
