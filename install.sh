@@ -4,6 +4,7 @@
 sudo python3.7 -m pip install numpy 
 sudo python3.7 -m pip install gensim 
 sudo python3.7 -m pip install sklearn 
+sudo python3.7 -m pip install tensorflow==2.4.0
 
 #Install Genderize library for genderization of Named Entity 
 sudo python3.7 -m pip install Genderize 
@@ -34,4 +35,5 @@ sudo python2.7 -m pip install SpeechRecognition
 #DialogTag
 cd ../DialogTag/
 sudo python3.7 -m pip install -e .
-sudo python2.7 -m pip install imutils SpeechRecognition json
+sudo python2.7 -m pip install imutils SpeechRecognition
+

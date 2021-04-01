@@ -1,4 +1,4 @@
-# Dialog_module
+# Robobreizh_dialog Package
 
 ## Description
 
@@ -32,9 +32,19 @@ sudo bash ./install.sh
 
 ### 1.3. Usage
 
+#### 1.3.1. Sentence Analysis Server
+
+This server can take a sentence as request and give back:
+- The main topic
+- The sentence category
+- A global sentiment (positive/neutral/negative)
+
+To launch it just run:
+
 Simply run the script 
 ```
-sudo ./NLPModule.py
+cd ./NLP_Server
+python3.7 main.py
 ```
 
 Be careful, in the first execution the script must download some additionals models, such as:
