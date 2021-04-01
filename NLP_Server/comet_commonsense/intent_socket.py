@@ -133,7 +133,7 @@ def prepare_interaction(model_pretrained, device, data_name):
 
 if __name__ == '__main__':
 	socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	socket.bind(('192.168.11.199', 9986))
+	socket.bind(('127.0.0.1', 9986))
 
 	device = 'cpu'
 	model_atomic = "pretrained_models/atomic_pretrained_model.pickle"

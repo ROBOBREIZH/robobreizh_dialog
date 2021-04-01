@@ -1,0 +1,8 @@
+torch
+tensorflow
+ftfy==5.1
+spacy==2.3.5
+tensorboardX
+tqdm
+pandas
+ipython
