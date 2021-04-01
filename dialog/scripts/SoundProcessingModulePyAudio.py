@@ -55,6 +55,7 @@ class SoundProcessingModule(object):
 			print("Say something!")
 			audio = r.listen(source)
 			transcript = r.recognize_google(audio)
+			print("Recognize: "+transcript)
 			self.sample_recognize(transcript)
 
 	def sample_recognize(self, response):
