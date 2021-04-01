@@ -25,7 +25,7 @@ import speech_recognition as sr
 
 
 class SoundProcessingModule(object):
-	def __init__(self, app, stop_recognition):
+	def __init__(self):
 		super(SoundProcessingModule, self).__init__()
 		print("connected")
 		self.bridge = CvBridge()
@@ -42,6 +42,10 @@ class SoundProcessingModule(object):
 
 		self.pub_turn = rospy.Publisher("cmd_vel", Twist,queue_size=10)
 		self.count = 0
+		self.server_ip = rospy.get_param('~server_ip','127.0.0.1')	 
+		self.server_port = rospy.get_param('~server_port', 9987)
+		self.server_ip_intents = rospy.get_param('~server_ip_intents','127.0.0.1')	 
+		self.server_port_intents = rospy.get_param('~server_port_intents', 9986)
 
 	def main(self):
 		with sr.Microphone() as source:
@@ -335,11 +339,8 @@ class SoundProcessingModule(object):
 		return output
 
 	def socket_request(self, sentence):
-		hote = "192.168.11.199"
-		port = 9986
-
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		sock.connect((hote, port))
+		sock.connect((self.server_ip_intents, self.server_port_intents))
 		print("Request commonsense intents . . . \n")
 		#print("Connection on {}".format(port))
 		sock.send(sentence)
@@ -350,11 +351,8 @@ class SoundProcessingModule(object):
 
 
 	def socket_request_sentence_analysis(self, sentence):
-		hote = "192.168.11.199"
-		port = 9985
-
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		sock.connect((hote, port))
+		sock.connect((self.server_ip, self.server_port))
 		print("Request category and sentiment analysis . . . \n")
 
 		#print("Connection on {}".format(port))
