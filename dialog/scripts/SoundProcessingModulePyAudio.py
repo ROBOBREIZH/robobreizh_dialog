@@ -58,78 +58,73 @@ class SoundProcessingModule(object):
 			self.sample_recognize(transcript)
 
 	def sample_recognize(self, response):
-		if len(response.results) == 0:
+		if len(response) == 0:
 			print("Can't understand")
 		else:
-			for result in response.results:
-				print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-				print(u'Confidence: {}'.format(result.alternatives[0].confidence))
+			result = self.socket_request_sentence_analysis(response)
+			print("Main topic: "+result["main_topic"])
+			print("Category: "+result["category"])
+			print("Sentiment: "+result["sentiment"])
+			new_sentence = result["sentence"]
 
-				transcription = result.alternatives[0].transcript
-				result = self.socket_request_sentence_analysis(transcription)
-				print("Main topic: "+result["main_topic"])
-				print("Category: "+result["category"])
-				print("Sentiment: "+result["sentiment"])
-				new_sentence = result["sentence"]
+			#Scenario 1
+			# if self.count < 3:
+			#self.interaction2(result, new_sentence)
 
-				#Scenario 1
-				# if self.count < 3:
-				#self.interaction2(result, new_sentence)
+			#Scenario 2
+			intents = self.socket_request(new_sentence)
+			self.technical_overview(intents, result)
+			 
 
-				#Scenario 2
-				intents = self.socket_request(new_sentence)
-				self.technical_overview(intents, result)
-				 
+			self.dialog_topic = result["main_topic"]
 
-				self.dialog_topic = result["main_topic"]
+			# if result["category"] == "Action-directive":
+			# 	command = self.action_command(new_sentence)
 
-				# if result["category"] == "Action-directive":
-				# 	command = self.action_command(new_sentence)
+			# 	for intent in command.sentence_recognition:
+			# 		action = intent.intention
+			# 		text += "I will try to perform the action "
 
-				# 	for intent in command.sentence_recognition:
-				# 		action = intent.intention
-				# 		text += "I will try to perform the action "
-
-				# 		text += action
-				# 		for slot in intent.slots:
-				# 			typ = slot.type
-				# 			data = slot.data
-				# 			text += "to the "
-				# 			text += typ
-				# 			text += data
-				# 		self.alAnimatedSpeech.say(text,self.configuration)
-					
-
-				# # else:
-				# # 	text = "I can't answer this type of question"
-				# # 	self.alAnimatedSpeech.say(text,self.configuration)
+			# 		text += action
+			# 		for slot in intent.slots:
+			# 			typ = slot.type
+			# 			data = slot.data
+			# 			text += "to the "
+			# 			text += typ
+			# 			text += data
+			# 		self.alAnimatedSpeech.say(text,self.configuration)
 				
-				# duration = time.time() - timeStart
-				# print("TOTAL ANSWER TIME: "+str(duration)+"s")
 
-				# text = "I think your intention is "+intents["desire"]+"."
-				# text += "Because I think you are "+intents["relation"]
-
-				# self.alAnimatedSpeech.say(text,self.configuration)
-				# text = "To do it you need "+intents["needs"]
-				# self.alAnimatedSpeech.say(text,self.configuration)
-
-				
-				#list_responses = ["Of course", "OK, I'm on it.", "I'm on my way!"]
-
-				# for drink in self.drinks:
-				# 	if drink in str(self.dialog_topic):
-				# 		text = random.choice(list_responses)
-				# 		text += " I'll bring you "+self.dialog_topic
-				# 		break
-				# 	else:
-				# 		text = "Sorry, I don't have "+self.dialog_topic
+			# # else:
+			# # 	text = "I can't answer this type of question"
+			# # 	self.alAnimatedSpeech.say(text,self.configuration)
 			
-				# file = open("search_result.txt", "r")
-				# content = file.read()
-				# text = content
-				# self.alAnimatedSpeech.say(text,self.configuration)
-				# file.close()
+			# duration = time.time() - timeStart
+			# print("TOTAL ANSWER TIME: "+str(duration)+"s")
+
+			# text = "I think your intention is "+intents["desire"]+"."
+			# text += "Because I think you are "+intents["relation"]
+
+			# self.alAnimatedSpeech.say(text,self.configuration)
+			# text = "To do it you need "+intents["needs"]
+			# self.alAnimatedSpeech.say(text,self.configuration)
+
+			
+			#list_responses = ["Of course", "OK, I'm on it.", "I'm on my way!"]
+
+			# for drink in self.drinks:
+			# 	if drink in str(self.dialog_topic):
+			# 		text = random.choice(list_responses)
+			# 		text += " I'll bring you "+self.dialog_topic
+			# 		break
+			# 	else:
+			# 		text = "Sorry, I don't have "+self.dialog_topic
+		
+			# file = open("search_result.txt", "r")
+			# content = file.read()
+			# text = content
+			# self.alAnimatedSpeech.say(text,self.configuration)
+			# file.close()
 
 	def recognize_google(self, local_file_path):
 		r = sr.Recognizer()
