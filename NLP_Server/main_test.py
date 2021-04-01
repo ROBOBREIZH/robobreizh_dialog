@@ -21,8 +21,8 @@ def main():
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Launch the sentence analysis server.')
-    parser.add_argument("--server_ip", type=str, default="127.0.0.1", help="Server IP address. Default localhost '127.0.0.1'.")	
-    parser.add_argument("--server_port", type=str, default="9987", help="Server port address. Default '9987'.")	
+	parser.add_argument("--server_ip", type=str, default="127.0.0.1", help="Server IP address. Default localhost '127.0.0.1'.")	
+	parser.add_argument("--server_port", type=str, default="9987", help="Server port address. Default '9987'.")	
 
 	args = parser.parse_args()
 
