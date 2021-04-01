@@ -14,6 +14,8 @@ from geometry_msgs.msg import Point
 
 from server_request_nlp import ServerRequestNLP
 from server_request_vision import ServerRequestVis
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import cv2, random, time, base64
 from cv_bridge import CvBridge, CvBridgeError
@@ -28,7 +30,7 @@ if __name__ == "__main__":
 	process = SoundProcessingModule()
 	process.main()
 
-	
+
 class SoundProcessingModule(object):
 	def __init__(self, app, stop_recognition):
 		super(SoundProcessingModule, self).__init__()
