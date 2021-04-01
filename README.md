@@ -12,20 +12,19 @@
 
 ### 1.2. Installation
 
-#### 1.2.1. Custom Module
+#### 1.2.1. Sentence Analysis Module
 Be careful, the full installation can take some free space (at least 500MB), report if it's > 1GB.
 
 Simply run 
-```
+```buildoutcfg
 sudo bash ./install.sh
 ```
-and see what happened...
 
 #### 1.2.2. Comet-Commonsense
 
 The installation will download 3GB of data (pretrained weights and models).
 
-```
+```buildoutcfg
 cd NLP_Server/comet_commonsense/
 sudo bash ./install.sh
 ```
@@ -39,10 +38,8 @@ This server can take a sentence as request and give back:
 - The sentence category
 - A global sentiment (positive/neutral/negative)
 
-To launch it just run:
-
-Simply run the script 
-```
+To launch it just run in a new terminal:
+```buildoutcfg
 cd ./NLP_Server
 python3.7 main.py
 ```
@@ -51,6 +48,28 @@ Be careful, in the first execution the script must download some additionals mod
 ```en_core_web_sm``` for Spacy and ```distilbert-base-uncased-distilled-squad``` & ```bert-large-cased-whole-word-masking-finetuned-squad``` for Transformers
 
 Those models will also take some free space (around 600MB for all).
+
+#### 1.3.2. Commonsense Intention Server
+
+This module use the [Comet Model](https://github.com/atcbosselut/comet-commonsense) from the ConceptNet and Atomic dataset to retrieve Commonsense Intention from sentences.
+
+To launch it run the script in a new terminal:
+
+```buildoutcfg
+cd ./NLP_Server/comet_commonsense
+python3.7 intent_socket.py
+```
+
+#### 1.3.3. ROS Dialog Node
+
+This Node is currently a implementation working with a computer in-built or plug-in Microphone (via the portaudio API). 
+To launch it go to the source of the robobreizh_simu_ws and type:
+
+```buildoutcfg
+catkin_make
+source devel/setup.bash
+roslaunch dialog dialog.launch
+```
 
 ### 1.4. Tools used
 
@@ -68,6 +87,9 @@ https://pypi.org/project/Genderize/
 
 NLTK (Natural Language ToolKit):
 https://www.nltk.org/
+
+Comet:
+https://github.com/atcbosselut/comet-commonsense
 
 ## 2. An action detection module using Mbot 
 
