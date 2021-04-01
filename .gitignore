@@ -1,11 +1,11 @@
 # custom ingnore 
 /wandb/
 /checkpoints/
-atomic/
-conceptnet/
+/NLP_Server/comet_commonsense/data/
+/NLP_Server/comet_commonsense/data/
 pretrained_models/
 pretrained_models.tar.gz
-model/
+/NLP_Server/comet_commonsense/model/
 
 
 # Byte-compiled / optimized / DLL files
