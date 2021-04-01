@@ -24,6 +24,11 @@ import socket
 import json
 import speech_recognition as sr
 
+if __name__ == "__main__":
+	process = SoundProcessingModule()
+	process.main()
+
+	
 class SoundProcessingModule(object):
 	def __init__(self, app, stop_recognition):
 		super(SoundProcessingModule, self).__init__()

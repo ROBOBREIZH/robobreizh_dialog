@@ -30,3 +30,8 @@ sudo python3.7 -m pip install -r requirements.txt
 sudo apt install portaudio19-dev -y
 sudo python2.7 -m pip install PyAudio 
 sudo python2.7 -m pip install SpeechRecognition 
+
+#DialogTag
+cd NLP_Server/DialogTag
+pip install -e .
+

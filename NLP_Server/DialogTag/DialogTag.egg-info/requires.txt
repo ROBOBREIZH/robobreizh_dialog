@@ -1,3 +1,0 @@
-transformers>=3.0.0
-tqdm
-tensorflow>=2.0.0

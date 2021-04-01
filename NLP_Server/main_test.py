@@ -1,5 +1,6 @@
 from topic_extraction import Extractor
 from NLPModule import NLPModule
+import argparse
 
 import socket
 import json
@@ -19,10 +20,16 @@ def main():
 
 
 if __name__ == "__main__":
+	parser = argparse.ArgumentParser(description='Launch the sentence analysis server.')
+    parser.add_argument("--server_ip", type=str, default="127.0.0.1", help="Server IP address. Default localhost '127.0.0.1'.")	
+    parser.add_argument("--server_port", type=str, default="9987", help="Server port address. Default '9987'.")	
+
+	args = parser.parse_args()
+
 	test = Extractor()
 	nlp = NLPModule()
 	socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	socket.bind(('192.168.11.199', 9985))
+	socket.bind((args.server_ip, args.server_port))
 	print("Listening")
 	main_topic = ""
 

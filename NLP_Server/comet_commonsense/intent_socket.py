@@ -132,8 +132,14 @@ def prepare_interaction(model_pretrained, device, data_name):
 
 
 if __name__ == '__main__':
+	parser = argparse.ArgumentParser(description='Launch the sentence analysis server.')
+    parser.add_argument("--server_ip", type=str, default="127.0.0.1", help="Server IP address. Default localhost '127.0.0.1'.")	
+    parser.add_argument("--server_port", type=str, default="9986", help="Server port address. Default '9986'.")	
+
+	args = parser.parse_args()
+
 	socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	socket.bind(('127.0.0.1', 9986))
+	socket.bind((args.server_ip, args.server_port))
 
 	device = 'cpu'
 	model_atomic = "pretrained_models/atomic_pretrained_model.pickle"
