@@ -23,7 +23,7 @@ sudo python3.7 -m pip install nltk
 python3.7 -c "import nltk; nltk.downloader.download('vader_lexicon');"
 
 # CASA Dependencies
-cd nlp/CASA-Dialogue-Act-Classifier
+cd NLP_Server/CASA-Dialogue-Act-Classifier
 sudo python3.7 -m pip install -r requirements.txt
 
 #PyAudio
