@@ -34,4 +34,4 @@ sudo python2.7 -m pip install SpeechRecognition
 #DialogTag
 cd ../DialogTag/
 sudo python3.7 -m pip install -e .
-
+sudo python2.7 -m pip install imutils SpeechRecognition json
