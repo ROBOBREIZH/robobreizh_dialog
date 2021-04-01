@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import wave
 import time
 import numpy as np
@@ -14,8 +17,6 @@ from geometry_msgs.msg import Point
 
 from server_request_nlp import ServerRequestNLP
 from server_request_vision import ServerRequestVis
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import cv2, random, time, base64
 from cv_bridge import CvBridge, CvBridgeError
