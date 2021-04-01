@@ -6,7 +6,7 @@
 pretrained_models/
 pretrained_models.tar.gz
 /NLP_Server/comet_commonsense/model/
-
+*.pyc
 
 # Byte-compiled / optimized / DLL files
 /__pycache__/
