@@ -48,6 +48,8 @@ class SoundProcessingModule(object):
 		self.server_port_intents = rospy.get_param('~server_port_intents', 9986)
 
 	def main(self):
+		r = sr.Recognizer()
+
 		with sr.Microphone() as source:
 			r.adjust_for_ambient_noise(source) 
 			print("Say something!")
