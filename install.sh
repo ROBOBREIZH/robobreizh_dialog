@@ -32,6 +32,6 @@ sudo python2.7 -m pip install PyAudio
 sudo python2.7 -m pip install SpeechRecognition 
 
 #DialogTag
-cd NLP_Server/DialogTag
+cd ./NLP_Server/DialogTag
 pip install -e .
 
