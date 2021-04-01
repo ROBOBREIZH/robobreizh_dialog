@@ -12,6 +12,7 @@
 
 ### 1.2. Installation
 
+#### 1.2.1. Custom Module
 Be careful, the full installation can take some free space (at least 500MB), report if it's > 1GB.
 
 Simply run 
@@ -19,6 +20,15 @@ Simply run
 sudo bash ./install.sh
 ```
 and see what happened...
+
+#### 1.2.2. Comet-Commonsense
+
+The installation will download 3GB of data (pretrained weights and models).
+
+```
+cd NLP_Server/comet_commonsense/
+sudo bash ./install.sh
+```
 
 ### 1.3. Usage
 

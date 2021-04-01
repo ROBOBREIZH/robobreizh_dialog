@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+	<env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+
+	<arg name="ip" />
+	<arg name="force_python" default="true" />
+	<param name="use_sim_time" value="true" />
+	<arg name="server_ip" default="127.0.0.1" doc="Value of the server IP, default localhost"/>
+	<arg name="server_port" default="9987" doc="Value of the server port, default 9987"/>
+	<arg name="server_ip_intents" default="127.0.0.1" doc="Value of the server IP for Comet, default localhost"/>
+	<arg name="server_port_intents" default="9986" doc="Value of the server port fro Comet, default 9986"/>
+
+	<node name="interact" pkg="interact" type="speech_to_text.py" output="screen" args="$(arg ip)">
+		<param name="server_ip" value="$(arg server_ip)"/>
+		<param name="server_port" value="$(arg server_port)"/>
+		<param name="server_ip_intents" value="$(arg server_ip_intents)"/>
+		<param name="server_port_intents" value="$(arg server_port_intents)"/>
+	</node>
+
+</launch>
+
