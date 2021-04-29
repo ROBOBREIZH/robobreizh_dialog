@@ -186,16 +186,15 @@ class NLPModule(object):
 
 	def sentiment_analysis(self, sentence):
 		sid = SentimentIntensityAnalyzer()
-		print(sentence)
 		ss = sid.polarity_scores(sentence)
 		if ss["neg"] >= 0.5:
-			print("sentiment negative")
+			#print("Sentiment : mainly negative")
 			return "negative"
 		if ss["pos"] >= 0.5:
-			print("sentiment positive")
+			#print("Sentiment : mainly positive")
 			return "positive"
 		if ss["neu"] >= 0.5:
-			print("sentiment neutral")
+			#print("Sentiment : mainly neutral")
 			return "neutral"
 			
 	def find_category(self, sentence):
@@ -208,7 +207,7 @@ class NLPModule(object):
 		'''
 		model = DialogTag('distilbert-base-uncased')
 		prediction = model.predict_tag(sentence)
-		print("Predicted category: "+prediction)
+		#print("Sentence category : "+prediction)
 		return prediction
 
 if __name__ == "__main__":

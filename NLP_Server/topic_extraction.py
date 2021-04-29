@@ -155,10 +155,10 @@ class Extractor(object):
 		self.current_topic = re.sub(r'\s([?.!,"](?:\s|$))', r'\1', self.current_topic)
 		self.sentence = re.sub(r'\s([?.!,"](?:\s|$))', r'\1', self.sentence)
 
-		print("New sentence:"+self.sentence)
+		#print("New sentence : "+self.sentence)
 		self.main_topic = self.current_topic
 		self.main_topic = self.main_topic.translate(str.maketrans('', '', string.punctuation)).lower()
-		print("Main topic : "+self.main_topic)
+		#print("Main topic : "+self.main_topic)
 		#category = self.find_category(self.sentence)
 
 		return self.main_topic, self.sentence

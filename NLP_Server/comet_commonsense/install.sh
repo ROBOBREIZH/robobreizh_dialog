@@ -22,7 +22,7 @@ if [[ -f "./pretrained_models.tar.gz" ]]
 then
 	echo "Skipping downloading weights."
 else
-	gdown https://drive.google.com/uc?id=1nYlm-jbnrtnfYVyFmOXq1jS9_qRpaaN4
+	sudo gdown https://drive.google.com/uc?id=1nYlm-jbnrtnfYVyFmOXq1jS9_qRpaaN4
 fi
 
 tar -xvzf pretrained_models.tar.gz
