@@ -5,11 +5,10 @@ import sys
 import spacy
 import time
 #import torch
-# from transformers import AutoTokenizer, AutoModelForQuestionAnswering
-# from transformers import BertForQuestionAnswering
-# from transformers import BertTokenizer
-# from transformers import GPT2Tokenizer, GPT2LMHeadModel
-#from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering
+from transformers import BertForQuestionAnswering
+from transformers import BertTokenizer
+from transformers import GPT2Tokenizer, GPT2LMHeadModel
 #from src.nlp.Question_Classification.classify_questions import classify_question
 import logging
 import pprint as pp
@@ -27,9 +26,10 @@ class NLPModule(object):
 	"""docstring for NLPModule"""		
 			
 	def answer_question2(self, sentence):
+		extractor = Extractor()
 		seconds = time.time()
 
-		topic, nouns, verbs = self.spacy_extract(sentence)
+		topic, sentence = extractor.extract(sentence)
 		if(topic == "Extraction issue"):
 			return "NLP error", ""
 
@@ -41,8 +41,8 @@ class NLPModule(object):
 
 		try:
 			results = wikipedia.search(sentence)
-			print("Wikipedia search results for our question:\n")
-			pp.pprint(results)
+			#print("Wikipedia search results for our question:\n")
+			#pp.pprint(results)
 		except wikipedia.exceptions.DisambiguationError as e:
 			print(e)
 		except wikipedia.exceptions.PageError as e:
@@ -63,15 +63,15 @@ class NLPModule(object):
 
 		if trouve == 0:
 			results = wikipedia.search(topic)
-			print("Wikipedia search from extracted topic :\n")
-			pp.pprint(results)
+			#print("Wikipedia search from extracted topic :\n")
+			#pp.pprint(results)
 			if(len(results) != 0):
 				wiki_page = results[0]
 			else:
 				return "Sorry, I couldn't find any wikipedia result for your question", ""
 
-		print("Wikipedia page :")
-		print(wikipedia.page(wiki_page).title)
+		#print("Wikipedia page :")
+		#print(wikipedia.page(wiki_page).title)
 		context = wikipedia.summary(wiki_page, sentences=10)
 
 		#context = wikipedia.page(results[0]).content
@@ -87,16 +87,16 @@ class NLPModule(object):
 		nlp_qa = pipeline("question-answering", 
 						  model=model_name, 
 						  tokenizer=model_name,
-						  framework="pt")
+						  framework="pt",
+						  device=0)
 
 		result = nlp_qa(question=question, context=context)
 		answer = result["answer"]
 		score = result["score"]
 
-		print("")
-		print("Question: {}".format(question))
+		print("\n Question: {}".format(question))
 		print("Answer: {}".format(answer))
-		print("Score: {}".format(score))
+		print("Score: {} \n".format(score))
 		duration = time.time() - seconds
 		print("################## Get answer duration : ")
 		print(duration)
@@ -212,7 +212,12 @@ class NLPModule(object):
 
 if __name__ == "__main__":
 
-	print(str(sys.argv[1]))
-	test = NLPModule()
-	res = test.answer_question2(str(sys.argv[1]))
-	print(res)
+	question = input("\n Enter a question, tape 'end' to finish \n")
+
+	while not question == "end":
+		
+		test = NLPModule()
+		res = test.answer_question2(question)
+		#print(res)
+
+		question = input("\n Enter a question, tape 'end' to finish \n")
